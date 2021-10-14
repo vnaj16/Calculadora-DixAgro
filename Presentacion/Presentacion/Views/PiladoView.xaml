@@ -17,6 +17,14 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
@@ -30,58 +38,62 @@
                     <Label Text="Costo de A. Pilado por Kilo: " Style="{StaticResource h1}"/>
                     <Label x:Name="Label_CAP" FontAttributes="Bold" Style="{StaticResource h1}"/>
                 </StackLayout>
-                
-                <StackLayout Grid.Row="1" Grid.Column="0" Margin="15,0,0,0">
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" Margin="5,20,5,5" Orientation="Horizontal">
+                    <Label Text="Costo de A. Pilado por Kilo: " Style="{StaticResource h2}"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" Margin="15,0,0,0">
                     <Label Text="Costo materia prima:"/>
                     <Entry x:Name="CMP" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="1" Grid.Column="1" Margin="15,0,0,0">
+                <StackLayout Grid.Row="2" Grid.Column="1" Margin="15,0,0,0">
                     <Label Text="Flete:"/>
                     <Entry x:Name="Flete" Text="0" HorizontalOptions="StartAndExpand"
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="2" Grid.Column="0" Margin="15,0,0,0">
+                <StackLayout Grid.Row="3" Grid.Column="0" Margin="15,0,0,0">
                     <Label Text="Servicio de maquila:"/>
                     <Entry x:Name="Maquila" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="2" Grid.Column="1" Margin="15,0,0,0">
+                <StackLayout Grid.Row="3" Grid.Column="1" Margin="15,0,0,0">
                     <Label Text="Envases y embalaja:"/>
                     <Entry x:Name="Envases" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="3" Grid.Column="0" Margin="15,0,0,0">
+                <StackLayout Grid.Row="4" Grid.Column="0" Margin="15,0,0,0">
                     <Label Text="Otros:"/>
                     <Entry x:Name="Otros" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="3" Grid.Column="1" Margin="15,0,0,0">
+                <StackLayout Grid.Row="4" Grid.Column="1" Margin="15,0,0,0">
                     <Label Text="Venta de descarte:"/>
                     <Entry x:Name="Descarte" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="4" Grid.Column="0" Margin="15,0,0,0">
+                <StackLayout Grid.Row="5" Grid.Column="0" Margin="15,0,0,0">
                     <Label Text="Venta de arrocillo:"/>
                     <Entry x:Name="Arrocillo" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="4" Grid.Column="1" Margin="15,0,0,0">
+                <StackLayout Grid.Row="5" Grid.Column="1" Margin="15,0,0,0">
                     <Label Text="Venta de polvillo:"/>
                     <Entry x:Name="Polvillo" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Grid.Row="5" Grid.Column="0" Margin="15,0,0,0">
+                <StackLayout Grid.Row="6" Grid.Column="0" Margin="15,0,0,0">
                     <Label Text="Produc. arroz pilado:"/>
                     <Entry x:Name="PAP" Text="0" HorizontalOptions="StartAndExpand" 
                            Focused="Entry_Focused" WidthRequest="80" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="0,15,0,0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                <StackLayout Orientation="Horizontal" Margin="0,15,0,0" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
                     <Button Text="Regresar" Clicked="Button_Clicked_1" Style="{StaticResource btn}" />
                     <Button Text="Calcular" Clicked="Button_Clicked" Style="{StaticResource btn}"/>
                 </StackLayout>
                 
-                <StackLayout Margin="0,30,0,0" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+                <StackLayout Margin="0,30,0,0" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
                     HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Orientation="Horizontal">
                     <Label Text="El costo total por " Margin="0,10,0,0"/>
                     <Entry x:Name="XKilos" Text="0"
@@ -91,7 +103,49 @@
                     <Button Text="Ver" x:Name="Button_VerXKilos" Style="{StaticResource btn}" WidthRequest="60" Clicked="Button_VerXKilos_Clicked"/>
                 </StackLayout>
 
-                <StackLayout Margin="0,15,0,0" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="9" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" Margin="5,20,5,5" Orientation="Horizontal">
+                    <Label Text="Tipo de Cambio: " Style="{StaticResource h2}"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,30,0,0" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalOptions="StartAndExpand" VerticalOptions="Start" Orientation="Horizontal">
+                    <Label Text="Dolar: " Margin="20,10,0,0"/>
+                    <Entry x:Name="TC_Dolar" Text="0"
+                   Focused="Entry_Focused" WidthRequest="46" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
+                    <Label Text="|" Margin="20,10,0,0"/>
+                    <Label Text="Costo total $: " Margin="20,10,0,0"/>
+                    <Label x:Name="Label_ResultadoCostoTotalDolar" FontSize="Medium" Margin="0,10,0,0" FontAttributes="Bold"/>
+                </StackLayout>
+                
+                <StackLayout Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="11" VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" Margin="5,20,5,5" Orientation="Horizontal">
+                    <Label Text="Impuestos: " Style="{StaticResource h2}"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,10,0,0" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalOptions="StartAndExpand" VerticalOptions="Start" Orientation="Horizontal">
+                    <Label Text="IVAP: " Margin="20,10,0,0"/>
+                    <Entry x:Name="IVAP" Text="0"
+                   Focused="Entry_Focused" WidthRequest="50" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
+                    <Label Text="%" Margin="0,10,0,0"/>
+                </StackLayout>
+                <StackLayout Margin="0,10,0,0" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalOptions="StartAndExpand" VerticalOptions="Start" Orientation="Horizontal">
+                    <Label Text="Detracción: " Margin="20,10,0,0"/>
+                    <Entry x:Name="Detracción" Text="0"
+                   Focused="Entry_Focused" WidthRequest="50" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
+                    <Label Text="%" Margin="0,10,0,0"/>
+                </StackLayout>
+                <StackLayout Margin="0,10,0,0" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalOptions="StartAndExpand" VerticalOptions="Start" Orientation="Horizontal">
+                    <Label Text="Renta: " Margin="20,10,0,0"/>
+                    <Entry x:Name="Renta" Text="0"
+                   Focused="Entry_Focused" WidthRequest="50" Unfocused="Entry_Unfocused" Keyboard="Numeric"/>
+                    <Label Text="%" Margin="0,10,0,0"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,15,0,0" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2"
                     HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
                     <Label Text="Fórmula:" FontAttributes="Bold"/>
                     <Label HorizontalTextAlignment="Center" Text="[(CMP + Flete + Maquila + Envases + Otros) - (Descarte + Arrocillo + Polvillo)] / PAP"/>

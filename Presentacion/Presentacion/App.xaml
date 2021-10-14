@@ -18,6 +18,10 @@
                 <Setter Property="FontSize" Value="22"/>
                 <Setter Property="TextColor" Value="{StaticResource MainColorText}"/>
             </Style>
+            <Style x:Key="h2" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="{StaticResource MainColorText}"/>
+            </Style>
 
             <Style x:Key="btn" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource MainColorButton}"/>
