@@ -40,9 +40,9 @@ namespace CalculadoraDixAgro_App.Views
                 ArrozPilado.Polvillo = decimal.Parse(Polvillo.Text);
                 ArrozPilado.PAP = decimal.Parse(PAP.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Application.Current.MainPage.DisplayAlert("Ha ocurrido un error", "Por favor comprobar que la informacion ingresada sea correcta","Ok");
+                Application.Current.MainPage.DisplayAlert("Ha ocurrido un error", "Por favor comprobar que la informacion ingresada sea correcta", "Ok");
                 isParseCorrect = false;
             }
 
@@ -101,7 +101,31 @@ namespace CalculadoraDixAgro_App.Views
                 var Kilos = decimal.Parse(XKilos.Text);
 
                 Label_ResultadoXKilos.Text = (Kilos * ArrozPilado.CAP).ToString("N2");
+                UpdateCostoByChangeType(sender,e);
             }
+        }
+
+        private void UpdateCostoByChangeType(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(XKilos.Text) && !String.IsNullOrWhiteSpace(TC_Dolar.Text))
+            {
+                var TipoCambio_Dolar = decimal.Parse(TC_Dolar.Text);
+                var Kilos = decimal.Parse(XKilos.Text);
+
+                if (TipoCambio_Dolar == 0)
+                {
+                    Label_ResultadoCostoTotalDolar.Text = "0";
+                }
+                else
+                {
+                    Label_ResultadoCostoTotalDolar.Text = ((Kilos * ArrozPilado.CAP) / TipoCambio_Dolar).ToString("N2");
+                }
+            }
+        }
+
+        private void TC_Dolar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //UpdateCostoByChangeType(sender);
         }
     }
 }
