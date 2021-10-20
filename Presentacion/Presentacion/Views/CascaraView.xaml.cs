@@ -20,7 +20,7 @@ namespace CalculadoraDixAgro_App.Views
             InitializeComponent();
 
             ArrozCascara = new ArrozCascara();
-            Button_VerXKilos.IsEnabled = false;
+            //Button_VerXKilos.IsEnabled = false;
         }
 
         //Calcular Button
@@ -49,7 +49,8 @@ namespace CalculadoraDixAgro_App.Views
                     Label_CAC.Text = CAC.ToString("N2");
 
                     Application.Current.MainPage.DisplayAlert("Resultado", $"El Costo de arroz pilado por kilo es S/. {CAC.ToString("N2")}", "Ok");
-                    Button_VerXKilos.IsEnabled = true;
+                    Button_VerXKilos_Clicked(sender, e);
+                    //Button_VerXKilos.IsEnabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -90,12 +91,20 @@ namespace CalculadoraDixAgro_App.Views
 
         private void Button_VerXKilos_Clicked(object sender, EventArgs e)
         {
-            if (!String.IsNullOrWhiteSpace(XKilos.Text))
+            try
             {
-                var Kilos = decimal.Parse(XKilos.Text);
+                if (!String.IsNullOrWhiteSpace(XKilos.Text))
+                {
+                    var Kilos = decimal.Parse(XKilos.Text);
 
-                Label_ResultadoXKilos.Text = (Kilos * ArrozCascara.CAC).ToString("N2");
-                UpdateCostoByChangeType(sender, e);
+                    Label_ResultadoXKilos.Text = (Kilos * ArrozCascara.CAC).ToString("N2");
+                    UpdateCostoByChangeType(sender, e);
+                }
+            }
+            catch (Exception ex)
+            {
+                Label_ResultadoXKilos.Text = "";
+                Application.Current.MainPage.DisplayAlert("Alerta", ex.Message, "Ok");
             }
         }
 
