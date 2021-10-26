@@ -1,5 +1,6 @@
 ﻿using CalculadoraDixAgro_App.Model;
 using CalculadoraDixAgro_App.ViewModel;
+using Presentacion.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,14 @@ namespace CalculadoraDixAgro_App.Views
 
             ArrozPilado = new ArrozPilado();
             //Button_VerXKilos.IsEnabled = false;
+            try
+            {
+                TC_Dolar.Text = ExchangeRateConsultant.GetExchangeRateSolesToDollar().ToString();
+            }
+            catch (Exception ex)
+            {
+                Application.Current.MainPage.DisplayAlert("Ha ocurrido un error", ex.Message, "Ok");
+            }
         }
 
         //Calcular Button
